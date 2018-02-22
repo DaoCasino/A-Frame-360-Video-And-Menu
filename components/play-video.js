@@ -6,9 +6,15 @@ AFRAME.registerComponent('play-video', {
   },
   init: function () {
     var data = this.data;
+	
     var videoSphere = document.querySelector('a-videosphere');
     this.el.addEventListener('click', function () {
+		
+	  if (data.src == "#video1") { alert("Coming soon");  return; }
+	  if (data.src == "#video2") { window.location="https://dao.casino/HunterGame/";  return; }
+		
       var element = document.querySelector('.fade');
+	 
       if (videoSphere.classList.contains('isPlaying')) {
         videoSphere.pause();
         element.emit('fade');
@@ -23,8 +29,10 @@ AFRAME.registerComponent('play-video', {
 
       } else {
         element.parentNode.setAttribute('visible', 'true');
+		
+		 
         element.emit('fade');
-
+		
         setTimeout(function () {
 
           document.querySelector('[environment]').setAttribute('environment', 'preset: threetowers;active: false');
