@@ -25,8 +25,8 @@ window.mobilecheck = function() {
   return check;
 };
 
-if (mobilecheck) {
-	alert(mobilecheck);
+if (mobilecheck()) {
+	//alert(mobilecheck);
 	document.querySelector("vr").display = "block";
 	document.querySelector("nomobile").display = "none";
 } 
